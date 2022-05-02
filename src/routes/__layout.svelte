@@ -1,25 +1,6 @@
-<script context="module">
-	import { createClient } from '@urql/svelte';
-	export async function load({ fetch }) {
-		const client = createClient({
-			url: import.meta.env.VITE_GRAPH_QL_ENDPOINT,
-			fetch
-		});
-		return {
-			// pass client in props to client side
-			props: { client },
-			// pass client in stuff to other pages, only available in load function
-			stuff: { client }
-		};
-	}
-</script>
-
 <script>
 	import Header from '$lib/header/Header.svelte';
-	import '../app.css';
-	import { setClient } from '@urql/svelte';
-	export let client;
-	setClient(client);
+	import '../styles/tailwind.css';
 </script>
 
 <Header />
